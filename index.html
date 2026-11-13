@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradely · מחשבון ממוצע תואר</title>
+  <meta name="description" content="Gradely: a bilingual, credit-weighted degree GPA calculator">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    <span class="spark s1">✦</span><span class="spark s2">✦</span><span class="spark s3">✦</span><span class="spark s4">✦</span>
+  </div>
+
+  <nav class="top">
+    <a class="brand" href="#" id="brand"><img src="logo.svg" alt="Gradely"><span>Gradely</span></a>
+    <div class="actions">
+      <button class="chip" id="exportBtn" data-i18n-title="exportT"><span>⬇</span><b data-i18n="export"></b></button>
+      <button class="chip" id="importBtn" data-i18n-title="importT"><span>⬆</span><b data-i18n="import"></b></button>
+      <input type="file" id="importFile" accept="application/json" hidden>
+      <button class="chip lang" id="langBtn">EN</button>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <header class="hero">
+      <h1><span class="grad" data-i18n="title"></span></h1>
+      <p class="sub" data-i18n="subtitle"></p>
+    </header>
+
+    <section class="dash">
+      <div class="card ring-card">
+        <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#E36E57"/><stop offset="1" stop-color="#6F60F0"/>
+            </linearGradient>
+          </defs>
+          <circle cx="60" cy="60" r="52" class="track"/>
+          <circle cx="60" cy="60" r="52" class="bar" id="ringBar"/>
+        </svg>
+        <div class="ring-text">
+          <span class="big" id="avg">0.00</span>
+          <span class="label" data-i18n="avg"></span>
+        </div>
+      </div>
+
+      <div class="mini-grid">
+        <div class="card mini peach"><span class="label" data-i18n="credits"></span><span class="num" id="credits">0</span></div>
+        <div class="card mini lilac"><span class="label" data-i18n="courses"></span><span class="num" id="count">0</span></div>
+        <div class="card mini mint wide">
+          <div class="row-between">
+            <span class="label" data-i18n="progress"></span>
+            <label class="inline"><span data-i18n="ofTotal"></span><input type="number" id="degreeCredits" min="0" step="0.5" placeholder="120"></label>
+          </div>
+          <div class="pbar"><span id="pfill"></span></div>
+          <span class="hint" id="ptext"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="layout">
+      <div>
+        <div id="semesters"></div>
+        <button class="btn primary" id="addSem"><span>＋</span> <b data-i18n="addSem"></b></button>
+      </div>
+
+      <aside>
+        <div class="card side">
+          <h2 data-i18n="targetT"></h2>
+          <div class="fields">
+            <label><span data-i18n="targetAvg"></span><input type="number" id="tAvg" min="0" step="0.1" placeholder="90"></label>
+            <label><span data-i18n="left"></span><input type="number" id="tLeft" min="0" step="0.5" placeholder="40"></label>
+          </div>
+          <p class="result" id="tResult"></p>
+        </div>
+
+        <div class="card side">
+          <h2 data-i18n="chartT"></h2>
+          <div id="chart" class="chart"></div>
+        </div>
+
+        <div class="card side">
+          <h2 data-i18n="settings"></h2>
+          <label class="inline full"><span data-i18n="scale"></span>
+            <select id="scale">
+              <option value="100">0 - 100</option>
+              <option value="4">0 - 4.0</option>
+              <option value="5">0 - 5.0</option>
+              <option value="10">0 - 10</option>
+              <option value="20">0 - 20</option>
+            </select>
+          </label>
+          <button class="btn ghost danger" id="resetBtn" data-i18n="reset"></button>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <p data-i18n="saved"></p>
+      <p class="links">
+        <a href="https://github.com/NoyaAdivi/gradely" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/noya-adivi/" target="_blank" rel="noopener">LinkedIn</a> ·
+        <a href="https://noyaadivi.github.io/noya-website" target="_blank" rel="noopener" data-i18n="portfolio"></a>
+      </p>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <template id="semTpl">
+    <section class="card sem">
+      <div class="sem-head">
+        <button class="fold" aria-label="toggle">▾</button>
+        <input type="text" class="sem-name">
+        <span class="sem-avg"></span>
+        <button class="icon del-sem" data-i18n-title="delSem">🗑</button>
+      </div>
+      <div class="sem-body">
+        <div class="crow head"><span data-i18n="course"></span><span data-i18n="cr"></span><span data-i18n="grade"></span><span data-i18n="inAvg"></span><span></span></div>
+        <div class="courses"></div>
+        <button class="btn soft add-course"><span>＋</span> <b data-i18n="addCourse"></b></button>
+      </div>
+    </section>
+  </template>
+
+  <template id="courseTpl">
+    <div class="crow">
+      <input type="text" class="name">
+      <input type="number" class="cr" min="0" step="0.5" placeholder="4">
+      <input type="number" class="gr" min="0" step="any" placeholder="90">
+      <label class="toggle"><input type="checkbox" class="inc"><span></span></label>
+      <button class="icon del">✕</button>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
