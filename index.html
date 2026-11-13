@@ -6,9 +6,11 @@
   <title>Gradely · מחשבון ממוצע תואר</title>
   <meta name="description" content="Gradely: a bilingual, credit-weighted degree GPA calculator">
   <link rel="icon" href="logo.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#FFF4EF">
+  <script>try{var t=JSON.parse(localStorage.getItem('noya-kit:theme'));if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body>
   <div class="bg" aria-hidden="true">
@@ -22,6 +24,7 @@
       <button class="chip" id="exportBtn" data-i18n-title="exportT"><span>⬇</span><b data-i18n="export"></b></button>
       <button class="chip" id="importBtn" data-i18n-title="importT"><span>⬆</span><b data-i18n="import"></b></button>
       <input type="file" id="importFile" accept="application/json" hidden>
+      <button class="chip" id="themeBtn" type="button" data-nk-theme><span data-nk-icon>🌙</span></button>
       <button class="chip lang" id="langBtn">EN</button>
     </div>
   </nav>
@@ -139,5 +142,6 @@
   </template>
 
   <script src="app.js"></script>
+  <script src="noya-kit.js" defer></script>
 </body>
 </html>
