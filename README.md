@@ -69,6 +69,28 @@
   </tr>
 </table>
 
+<a name="app"></a>
+<h3 align="center">📲 App and FAQ <sub><sup>new</sup></sub></h3>
+<p align="center">Gradely installs as a real app with its own icon, and the site answers common questions by topic.</p>
+
+<table>
+  <tr valign="top">
+    <td width="50%">
+      <ul>
+        <li><b>📲 Installable app (PWA):</b> its own icon and window on phone and desktop, named just Gradely</li>
+        <li><b>⚡ Works offline</b> after the first visit, powered by a service worker</li>
+      </ul>
+    </td>
+    <td width="50%">
+      <ul>
+        <li><b><a href="https://noyaadivi.github.io/gradely/?lang=en#faq">❓ FAQ by topic</a>:</b> filter chips, search with highlighting and smooth animations</li>
+        <li><b>🔗 Built by Noya Adivi</b> with a LinkedIn link at the bottom of every page</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
 <a name="boost-planner"></a>
 <h3 align="center">🚀 GPA Boost Planner <sub><sup>new</sup></sub></h3>
 <p align="center">Pick how many points you want to add to your average, and Gradely builds realistic plans to get there.</p>
@@ -84,7 +106,7 @@
     </td>
     <td width="50%">
       <ul>
-        <li><b>🎯 I pick the courses:</b> choose which courses to retake and see the grade you need in each</li>
+        <li><b>🎯 Pick manually:</b> choose which courses to retake and see the grade you need in each</li>
         <li><b>🔮 What if?</b> slide a new grade for any course and watch your average change live</li>
         <li><b>⚡ Best value:</b> a ranking of which course moves your average the most</li>
       </ul>
