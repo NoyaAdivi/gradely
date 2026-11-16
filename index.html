@@ -104,6 +104,40 @@
       </aside>
     </section>
 
+    <section class="card boost" id="boost">
+      <div class="boost-head">
+        <div>
+          <h2 data-i18n="bT"></h2>
+          <p class="hint" data-i18n="bSub"></p>
+        </div>
+        <div class="boost-now">
+          <div><span class="label" data-i18n="bNow"></span><b id="bNow">0</b></div>
+          <span class="arrow">➜</span>
+          <div><span class="label" data-i18n="bGoalL"></span><b id="bGoal" class="goal">0</b></div>
+        </div>
+      </div>
+
+      <div class="boost-ctrl">
+        <label class="inline"><span data-i18n="bBy"></span><input type="number" id="bX" min="0" step="any" placeholder="2"></label>
+        <div class="quick" id="bQuick"></div>
+      </div>
+      <details class="real">
+        <summary data-i18n="bReal"></summary>
+        <div class="fields">
+          <label><span data-i18n="bCap"></span><input type="number" id="bCap" min="0" step="any"></label>
+          <label><span data-i18n="bJump"></span><input type="number" id="bJump" min="0" step="any"></label>
+        </div>
+      </details>
+
+      <div class="tabs" id="bTabs" role="tablist">
+        <button class="tab" data-tab="plans" role="tab"><span>💡</span> <b data-i18n="tabPlans"></b></button>
+        <button class="tab" data-tab="pick" role="tab"><span>🎯</span> <b data-i18n="tabPick"></b></button>
+        <button class="tab" data-tab="whatif" role="tab"><span>🔮</span> <b data-i18n="tabWhat"></b></button>
+        <button class="tab" data-tab="impact" role="tab"><span>⚡</span> <b data-i18n="tabImpact"></b></button>
+      </div>
+      <div class="pane" id="bPane" aria-live="polite"></div>
+    </section>
+
     <footer>
       <p data-i18n="saved"></p>
       <p class="links">
