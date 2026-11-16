@@ -22,15 +22,16 @@
 
 <p align="center">
   Gradely הוא מחשבון ממוצע משוקלל לפי נקודות זכות, בעברית ובאנגלית, לכל תואר ולכל מוסד.<br>
-  מוסיפים סמסטרים, רואים את הממוצע מתעורר לחיים, ומגלים בדיוק מה צריך כדי להגיע ליעד.
+  מוסיפים סמסטרים, רואים את הממוצע מתעורר לחיים, מגלים בדיוק מה צריך כדי להגיע ליעד,<br>ונותנים ל<b>מתכנן השיפור</b> להראות את הדרך הכי חכמה להעלות את הממוצע.
 </p>
 
 <table align="center">
   <tr>
-    <td align="center" width="25%"><a href="#how-it-works"><b>⚖️ משוקלל</b></a><br><sub>לפי נ"ז, כמו שצריך</sub></td>
-    <td align="center" width="25%"><a href="https://noyaadivi.github.io/gradely/"><b>🎯 יעדים</b></a><br><sub>מה צריך כדי להגיע</sub></td>
-    <td align="center" width="25%"><a href="README.md"><b>🌍 HE · EN</b></a><br><sub>דו לשוני מלא, תומך RTL</sub></td>
-    <td align="center" width="25%"><a href="#tech-stack"><b>📦 0 ספריות</b></a><br><sub>HTML, CSS, JS בלבד</sub></td>
+    <td align="center" width="20%"><a href="#how-it-works"><b>⚖️ משוקלל</b></a><br><sub>לפי נ"ז, כמו שצריך</sub></td>
+    <td align="center" width="20%"><a href="https://noyaadivi.github.io/gradely/"><b>🎯 יעדים</b></a><br><sub>מה צריך כדי להגיע</sub></td>
+    <td align="center" width="20%"><a href="#boost-planner"><b>🚀 שיפור</b></a><br><sub>תוכניות חכמות להעלאת הממוצע</sub></td>
+    <td align="center" width="20%"><a href="README.md"><b>🌍 HE · EN</b></a><br><sub>דו לשוני מלא, תומך RTL</sub></td>
+    <td align="center" width="20%"><a href="#tech-stack"><b>📦 0 ספריות</b></a><br><sub>HTML, CSS, JS בלבד</sub></td>
   </tr>
 </table>
 
@@ -69,6 +70,31 @@
   </tr>
 </table>
 
+<a name="boost-planner"></a>
+<h3 align="center">🚀 מתכנן שיפור ממוצע <sub><sup>חדש</sup></sub></h3>
+<p align="center">בוחרים בכמה נקודות רוצים להעלות את הממוצע, ו-Gradely בונה תוכניות הגיוניות להגיע לשם.</p>
+
+<table dir="rtl">
+  <tr valign="top">
+    <td width="50%" dir="rtl">
+      <ul>
+        <li><b>💡 תוכניות מוכנות:</b> הכי מעט קורסים, שיפור קטן בהרבה קורסים, לתקן את החלשים, או רק דרך קורסים עתידיים</li>
+        <li><b>⚖️ גבולות הגיוניים:</b> קובעים מה הציון המקסימלי ההגיוני וכמה אפשר לשפר בכל קורס</li>
+        <li><b>🏷️ תגיות</b> שמראות אם התוכנית הגיונית או מאתגרת</li>
+      </ul>
+    </td>
+    <td width="50%" dir="rtl">
+      <ul>
+        <li><b>🎯 אני בוחר/ת קורסים:</b> בוחרים על אילו קורסים לחזור ורואים איזה ציון צריך בכל אחד</li>
+        <li><b>🔮 מה אם?</b> מזיזים ציון חדש לכל קורס ורואים את הממוצע משתנה בזמן אמת</li>
+        <li><b>⚡ איפה הכי משתלם:</b> דירוג של הקורסים שהכי מזיזים את הממוצע</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<p align="center"><a href="https://noyaadivi.github.io/gradely/#boost"><img src="docs/images/boost-he.png" width="100%" alt="מתכנן שיפור ממוצע: תוכניות מוכנות להעלאת הממוצע ב-2 נקודות"></a></p>
+
 <a name="see-it-in-action"></a>
 <p align="center"><a href="#how-it-works"><img src="docs/readme/screens-he.svg" width="100%" alt="ככה זה נראה"></a></p>
 
@@ -99,6 +125,8 @@ flowchart LR
 | ממוצע משוקלל | `Σ (grade × credits) / Σ credits` |
 | ממוצע סמסטר | אותה נוסחה, רק על הקורסים של הסמסטר |
 | מה צריך ליעד | `(goal × (credits + left) − Σ grade × credits) / left` |
+| שיפור ב-X נקודות | מוצאים שיפורי ציונים שמוסיפים `X × Σ credits` ל-`Σ grade × credits`, כל אחד בתוך הגבולות ההגיוניים |
+| כמה קורס שווה | כל נקודה בקורס מוסיפה לממוצע `credits / Σ credits` |
 
 <p align="center"><sub>קורס נספר רק כשהציון בתוך הסולם, הנ"ז חיוביות והמתג דלוק.</sub></p>
 

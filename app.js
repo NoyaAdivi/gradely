@@ -17,6 +17,7 @@ const T = {
     export: "ייצוא", import: "ייבוא", exportT: "שמירת הנתונים כקובץ", importT: "טעינת נתונים מקובץ",
     pText: (d, t) => `${d} מתוך ${t} נ"ז`, pEmpty: 'הזינו סה"כ נ"ז כדי לראות התקדמות',
     exported: "הקובץ ירד ✓", imported: "הנתונים נטענו ✓", badFile: "הקובץ לא תקין",
+    pill1: "⚖️ ממוצע משוקלל", pill2: "🎯 מחשבון יעדים", pill3: "🚀 מתכנן שיפור", pill4: "🔒 בלי הרשמה",
     bT: "🚀 מתכנן שיפור ממוצע", bSub: "בחרו בכמה נקודות להעלות את הממוצע, ו-Gradely יבנה לכם תוכניות הגיוניות",
     bNow: "עכשיו", bGoalL: "היעד", bBy: "להעלות את הממוצע ב-", bReal: "⚖️ מה נחשב הגיוני?",
     bCap: "ציון מקסימלי הגיוני", bJump: "שיפור מקסימלי בקורס",
@@ -52,6 +53,7 @@ const T = {
     export: "Export", import: "Import", exportT: "Save your data as a file", importT: "Load data from a file",
     pText: (d, t) => `${d} of ${t} credits`, pEmpty: "Enter total credits to see progress",
     exported: "File downloaded ✓", imported: "Data loaded ✓", badFile: "Invalid file",
+    pill1: "⚖️ Credit-weighted", pill2: "🎯 Goal calculator", pill3: "🚀 Boost planner", pill4: "🔒 No sign-up",
     bT: "🚀 GPA Boost Planner", bSub: "Pick how many points to raise your average, and Gradely builds realistic plans",
     bNow: "Now", bGoalL: "Goal", bBy: "Raise my average by", bReal: "⚖️ What counts as realistic?",
     bCap: "Highest realistic grade", bJump: "Max jump per course",
@@ -547,3 +549,32 @@ function syncInputs() {
 
 syncInputs();
 render();
+
+/* ---------- polish: reveal on scroll, card spotlight, ripples, nav ---------- */
+(() => {
+  const io = "IntersectionObserver" in window ? new IntersectionObserver((es) => es.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), { threshold: 0.08 }) : null;
+  document.querySelectorAll(".reveal").forEach((el) => (io ? io.observe(el) : el.classList.add("in")));
+
+  document.addEventListener("pointermove", (e) => {
+    const c = e.target.closest && e.target.closest(".card, .plan");
+    if (!c) return;
+    const r = c.getBoundingClientRect();
+    c.style.setProperty("--mx", e.clientX - r.left + "px");
+    c.style.setProperty("--my", e.clientY - r.top + "px");
+  }, { passive: true });
+
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest(".btn, .chip, .qchip, .tab, .pchip");
+    if (!b || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const r = b.getBoundingClientRect(), s = document.createElement("span");
+    s.className = "ripple";
+    s.style.left = e.clientX - r.left + "px"; s.style.top = e.clientY - r.top + "px";
+    b.appendChild(s); setTimeout(() => s.remove(), 650);
+  });
+
+  const nav = document.querySelector(".top");
+  const onScroll = () => nav.classList.toggle("scrolled", scrollY > 10);
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+})();

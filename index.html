@@ -32,11 +32,13 @@
 
   <main class="wrap">
     <header class="hero">
+      <div class="hero-badge" aria-hidden="true"><img src="logo.svg" alt=""><span class="orbit"><i></i><i></i><i></i></span></div>
       <h1><span class="grad" data-i18n="title"></span></h1>
       <p class="sub" data-i18n="subtitle"></p>
+      <div class="pills"><span data-i18n="pill1"></span><span data-i18n="pill2"></span><a href="#boost" data-i18n="pill3"></a><span data-i18n="pill4"></span></div>
     </header>
 
-    <section class="dash">
+    <section class="dash reveal">
       <div class="card ring-card">
         <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
           <defs>
@@ -67,7 +69,7 @@
       </div>
     </section>
 
-    <section class="layout">
+    <section class="layout reveal">
       <div>
         <div id="semesters"></div>
         <button class="btn primary" id="addSem"><span>＋</span> <b data-i18n="addSem"></b></button>
@@ -104,7 +106,7 @@
       </aside>
     </section>
 
-    <section class="card boost" id="boost">
+    <section class="card boost reveal" id="boost">
       <div class="boost-head">
         <div>
           <h2 data-i18n="bT"></h2>

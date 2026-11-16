@@ -20,15 +20,16 @@
 
 <p align="center">
   Gradely is a bilingual, credit-weighted GPA calculator for any degree at any school.<br>
-  Add your semesters, see your average come alive, and find out exactly what you need to hit your goal.
+  Add your semesters, see your average come alive, find out exactly what you need to hit your goal,<br>and let the <b>Boost Planner</b> show you the smartest way to raise your average.
 </p>
 
 <table align="center">
   <tr>
-    <td align="center" width="25%"><a href="#how-it-works"><b>⚖️ Weighted</b></a><br><sub>by credits, the real way</sub></td>
-    <td align="center" width="25%"><a href="https://noyaadivi.github.io/gradely/"><b>🎯 Goals</b></a><br><sub>what you need to get there</sub></td>
-    <td align="center" width="25%"><a href="README.he.md"><b>🌍 HE · EN</b></a><br><sub>fully bilingual, RTL ready</sub></td>
-    <td align="center" width="25%"><a href="#tech-stack"><b>📦 0 deps</b></a><br><sub>plain HTML, CSS, JS</sub></td>
+    <td align="center" width="20%"><a href="#how-it-works"><b>⚖️ Weighted</b></a><br><sub>by credits, the real way</sub></td>
+    <td align="center" width="20%"><a href="https://noyaadivi.github.io/gradely/"><b>🎯 Goals</b></a><br><sub>what you need to get there</sub></td>
+    <td align="center" width="20%"><a href="#boost-planner"><b>🚀 Boost</b></a><br><sub>smart plans to raise your GPA</sub></td>
+    <td align="center" width="20%"><a href="README.he.md"><b>🌍 HE · EN</b></a><br><sub>fully bilingual, RTL ready</sub></td>
+    <td align="center" width="20%"><a href="#tech-stack"><b>📦 0 deps</b></a><br><sub>plain HTML, CSS, JS</sub></td>
   </tr>
 </table>
 
@@ -67,6 +68,31 @@
   </tr>
 </table>
 
+<a name="boost-planner"></a>
+<h3 align="center">🚀 GPA Boost Planner <sub><sup>new</sup></sub></h3>
+<p align="center">Pick how many points you want to add to your average, and Gradely builds realistic plans to get there.</p>
+
+<table>
+  <tr valign="top">
+    <td width="50%">
+      <ul>
+        <li><b>💡 Ready plans:</b> fewest courses, a small boost everywhere, fix the weak spots, or future courses only</li>
+        <li><b>⚖️ Realistic limits:</b> you set the highest realistic grade and the max jump per course</li>
+        <li><b>🏷️ Tags</b> that tell you if a plan is realistic or challenging</li>
+      </ul>
+    </td>
+    <td width="50%">
+      <ul>
+        <li><b>🎯 I pick the courses:</b> choose which courses to retake and see the grade you need in each</li>
+        <li><b>🔮 What if?</b> slide a new grade for any course and watch your average change live</li>
+        <li><b>⚡ Best value:</b> a ranking of which course moves your average the most</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<p align="center"><a href="https://noyaadivi.github.io/gradely/#boost"><img src="docs/images/boost-en.png" width="100%" alt="GPA Boost Planner: ready plans to raise the average by 2 points"></a></p>
+
 <a name="see-it-in-action"></a>
 <p align="center"><a href="#how-it-works"><img src="docs/readme/screens-en.svg" width="100%" alt="See it in action"></a></p>
 
@@ -97,6 +123,8 @@ flowchart LR
 | Weighted average | `Σ (grade × credits) / Σ credits` |
 | Semester average | same formula, only that semester's courses |
 | Needed for your goal | `(goal × (credits + left) − Σ grade × credits) / left` |
+| Boost by X points | find course upgrades that add `X × Σ credits` to `Σ grade × credits`, each capped at the realistic limits |
+| Course value | every point in a course adds `credits / Σ credits` to the average |
 
 <p align="center"><sub>A course counts only when its grade is inside the scale, its credits are positive and its toggle is on.</sub></p>
 
