@@ -405,3 +405,7 @@ footer::before { content: ""; display: block; width: 120px; height: 4px; margin:
 .toast-act { font: inherit; font-weight: 800; border: none; background: linear-gradient(90deg, #FFB4A2, #B3A9FA); color: #2B2140; padding: 5px 14px; border-radius: 99px; cursor: pointer; }
 @media (max-width: 560px) { .demo { flex-wrap: wrap; } .demo .btn { width: 100%; } }
 html[data-theme="dark"] .toast { background: #F3EFFF; color: #2B2140; }
+
+/* consistency fixes: one font everywhere, no sideways scroll on mobile */
+button,input,select,textarea{font-family:inherit}
+html,body{overflow-x:clip;max-width:100%}
