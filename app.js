@@ -17,6 +17,9 @@ const T = {
     export: "ייצוא", import: "ייבוא", exportT: "שמירת הנתונים כקובץ", importT: "טעינת נתונים מקובץ",
     pText: (d, t) => `${d} מתוך ${t} נ"ז`, pEmpty: 'הזינו סה"כ נ"ז כדי לראות התקדמות',
     exported: "הקובץ ירד ✓", imported: "הנתונים נטענו ✓", badFile: "הקובץ לא תקין",
+    demoQ: "רוצים לראות איך זה עובד? אפשר לטעון נתוני דוגמה ולשחק איתם", demoBtn: "✨ טעינת דוגמה",
+    backupHint: "גיבוי או מעבר למחשב אחר:", undo: "ביטול", delCourse: "הקורס נמחק", delSemT: "הסמסטר נמחק", demoLoaded: "נתוני הדוגמה נטענו ✨",
+    sample: [["סמסטר א׳", [["מבוא למדעי המחשב", 5, 88], ["אינפי 1", 5, 72], ["אלגברה לינארית", 4, 81], ["אנגלית", 2, 95]]], ["סמסטר ב׳", [["מבני נתונים", 5, 79], ["אינפי 2", 5, 68], ["לוגיקה", 3, 90]]]],
     pill1: "⚖️ ממוצע משוקלל", pill2: "🎯 מחשבון יעדים", pill3: "🚀 מתכנן שיפור", pill4: "🔒 בלי הרשמה",
     bT: "🚀 מתכנן שיפור ממוצע", bSub: "בחרו בכמה נקודות להעלות את הממוצע, ו-Gradely יבנה לכם תוכניות הגיוניות",
     bNow: "עכשיו", bGoalL: "היעד", bBy: "להעלות את הממוצע ב-", bReal: "⚖️ מה נחשב הגיוני?",
@@ -53,6 +56,9 @@ const T = {
     export: "Export", import: "Import", exportT: "Save your data as a file", importT: "Load data from a file",
     pText: (d, t) => `${d} of ${t} credits`, pEmpty: "Enter total credits to see progress",
     exported: "File downloaded ✓", imported: "Data loaded ✓", badFile: "Invalid file",
+    demoQ: "Want to see how it works? Load sample data and play with it", demoBtn: "✨ Load sample",
+    backupHint: "Back up or move to another computer:", undo: "Undo", delCourse: "Course deleted", delSemT: "Semester deleted", demoLoaded: "Sample data loaded ✨",
+    sample: [["Semester A", [["Intro to CS", 5, 88], ["Calculus 1", 5, 72], ["Linear Algebra", 4, 81], ["English", 2, 95]]], ["Semester B", [["Data Structures", 5, 79], ["Calculus 2", 5, 68], ["Logic", 3, 90]]]],
     pill1: "⚖️ Credit-weighted", pill2: "🎯 Goal calculator", pill3: "🚀 Boost planner", pill4: "🔒 No sign-up",
     bT: "🚀 GPA Boost Planner", bSub: "Pick how many points to raise your average, and Gradely builds realistic plans",
     bNow: "Now", bGoalL: "Goal", bBy: "Raise my average by", bReal: "⚖️ What counts as realistic?",
@@ -183,6 +189,7 @@ function update() {
     });
   });
 
+  $("demoBox").hidden = count > 0;
   progress(credits);
   target(sum, credits);
   chart(perSem);
@@ -255,11 +262,22 @@ function confetti() {
 }
 
 let toastTimer;
-function toast(msg) {
+function toast(msg, action) {
   const el = $("toast");
-  el.textContent = msg; el.classList.add("show");
-  clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove("show"), 2200);
+  el.textContent = msg;
+  if (action) {
+    const b = document.createElement("button");
+    b.className = "toast-act"; b.textContent = action.label;
+    b.onclick = () => { el.classList.remove("show"); action.run(); };
+    el.appendChild(b);
+  }
+  el.classList.toggle("act", !!action);
+  el.classList.add("show");
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove("show"), action ? 5000 : 2200);
 }
+let undoSnap = null;
+const snapshot = () => (undoSnap = JSON.stringify(state.semesters));
+const undoIt = () => { if (!undoSnap) return; state.semesters = JSON.parse(undoSnap); undoSnap = null; render(); };
 
 function animateOut(el, done) {
   el.classList.add("out");
@@ -294,13 +312,16 @@ $("semesters").addEventListener("click", (e) => {
   }
   if (e.target.closest(".del")) {
     const row = e.target.closest(".crow");
-    animateOut(row, () => { sem.courses.splice(+row.dataset.c, 1); render(); });
+    snapshot();
+    animateOut(row, () => { sem.courses.splice(+row.dataset.c, 1); render(); toast(t().delCourse, { label: t().undo, run: undoIt }); });
   }
   if (e.target.closest(".del-sem")) {
+    snapshot();
     animateOut(semEl, () => {
       state.semesters.splice(si, 1);
       if (!state.semesters.length) state.semesters.push(blankSem());
       render();
+      toast(t().delSemT, { label: t().undo, run: undoIt });
     });
   }
 });
@@ -382,7 +403,7 @@ function boost(sum, credits) {
   $("bGoal").classList.toggle("dim", !(X > 0));
 
   // quick chips, relative to the scale
-  const steps = [1, 2, 3, 5].map((k) => +(k * state.scale / 100).toFixed(2));
+  const steps = [1, 2, 3, 5].map((k) => +(state.scale >= 20 ? k * state.scale / 100 : k / 10).toFixed(2));
   $("bQuick").innerHTML = steps.map((v) => `<button class="qchip${X === v ? " on" : ""}" data-v="${v}">+${v}</button>`).join("");
   $("bCap").placeholder = fg(capV()); $("bJump").placeholder = fg(jumpV());
   document.querySelectorAll("#bTabs .tab").forEach((b) => b.classList.toggle("on", b.dataset.tab === tab()));
@@ -507,6 +528,24 @@ $("bPane").addEventListener("click", (e) => {
   s.has(b.dataset.k) ? s.delete(b.dataset.k) : s.add(b.dataset.k);
   state.bPick = [...s]; update();
 });
+
+// Enter in a grade field: jump to the next row, or add a new course
+$("semesters").addEventListener("keydown", (e) => {
+  if (e.key !== "Enter" || !e.target.matches(".crow input")) return;
+  e.preventDefault();
+  const row = e.target.closest(".crow"), next = row.nextElementSibling;
+  if (next) next.querySelector(".name").focus();
+  else row.closest(".sem").querySelector(".add-course").click();
+});
+
+function loadDemo() {
+  state.semesters = t().sample.map(([name, cs]) => ({ name, open: true, courses: cs.map(([n, cr, gr]) => ({ name: n, cr: String(cr), gr: String(gr), inc: true })) }));
+  state.scale = 100; state.degreeCredits = "120"; state.tAvg = "85"; state.tLeft = "40"; state.bX = "2";
+  syncInputs(); render(); toast(t().demoLoaded); confetti();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+$("demoBtn").onclick = loadDemo;
+$("demoBtn2").onclick = loadDemo;
 
 $("resetBtn").onclick = () => {
   if (!confirm(t().resetQ)) return;

@@ -22,9 +22,6 @@
   <nav class="top">
     <a class="brand" href="#" id="brand"><img src="logo.svg" alt="Gradely"><span>Gradely</span></a>
     <div class="actions">
-      <button class="chip" id="exportBtn" data-i18n-title="exportT"><span>⬇</span><b data-i18n="export"></b></button>
-      <button class="chip" id="importBtn" data-i18n-title="importT"><span>⬆</span><b data-i18n="import"></b></button>
-      <input type="file" id="importFile" accept="application/json" hidden>
       <button class="chip" id="themeBtn" type="button" data-nk-theme><span data-nk-icon>🌙</span></button>
       <button class="chip lang" id="langBtn">EN</button>
     </div>
@@ -71,6 +68,7 @@
 
     <section class="layout reveal">
       <div>
+        <div class="demo card" id="demoBox"><span>👋</span><p data-i18n="demoQ"></p><button class="btn soft" id="demoBtn" data-i18n="demoBtn"></button></div>
         <div id="semesters"></div>
         <button class="btn primary" id="addSem"><span>＋</span> <b data-i18n="addSem"></b></button>
       </div>
@@ -101,6 +99,13 @@
               <option value="20">0 - 20</option>
             </select>
           </label>
+          <p class="hint backup-hint" data-i18n="backupHint"></p>
+          <div class="row2">
+            <button class="btn ghost" id="exportBtn" data-i18n-title="exportT">⬇ <b data-i18n="export"></b></button>
+            <button class="btn ghost" id="importBtn" data-i18n-title="importT">⬆ <b data-i18n="import"></b></button>
+          </div>
+          <input type="file" id="importFile" accept="application/json" hidden>
+          <button class="btn ghost" id="demoBtn2" data-i18n="demoBtn"></button>
           <button class="btn ghost danger" id="resetBtn" data-i18n="reset"></button>
         </div>
       </aside>

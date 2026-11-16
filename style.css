@@ -390,3 +390,18 @@ html[data-theme="dark"] .ripple { background: rgba(194, 185, 255, .35); }
 footer { position: relative; }
 footer::before { content: ""; display: block; width: 120px; height: 4px; margin: 0 auto 18px; border-radius: 99px; background: linear-gradient(90deg, #FFB4A2, #B3A9FA, #A9E3CD); }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+
+/* ---------- demo banner, backup row, undo toast ---------- */
+.demo { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; background: linear-gradient(120deg, var(--surface), var(--peach) 60%, var(--lilac)); animation: rise .5s ease both; }
+.demo[hidden] { display: none; }
+.demo > span { font-size: 1.8rem; animation: wave 2.4s ease-in-out infinite; transform-origin: 70% 70%; }
+@keyframes wave { 0%, 60%, 100% { transform: rotate(0); } 10%, 30% { transform: rotate(16deg); } 20%, 40% { transform: rotate(-8deg); } }
+.demo p { flex: 1; font-weight: 500; }
+.demo .btn { width: auto; margin: 0; white-space: nowrap; font-weight: 700; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+.backup-hint { margin-bottom: 8px; }
+#demoBtn2 { margin-bottom: 8px; color: var(--deep); }
+.toast.act { pointer-events: auto; display: flex; align-items: center; gap: 14px; }
+.toast-act { font: inherit; font-weight: 800; border: none; background: linear-gradient(90deg, #FFB4A2, #B3A9FA); color: #2B2140; padding: 5px 14px; border-radius: 99px; cursor: pointer; }
+@media (max-width: 560px) { .demo { flex-wrap: wrap; } .demo .btn { width: 100%; } }
+html[data-theme="dark"] .toast { background: #F3EFFF; color: #2B2140; }

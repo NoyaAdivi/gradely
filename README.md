@@ -62,6 +62,7 @@
         <li><b>Hebrew and English</b> with one click, RTL and LTR</li>
         <li><b>Saved in your browser</b>, no sign-up, no server</li>
         <li><b>Export and import</b> your grades as a JSON file</li>
+        <li><b>Sample data</b> in one click, and <b>undo</b> after deleting</li>
         <li><b>Responsive</b>, animated, and respects reduced motion</li>
       </ul>
     </td>
