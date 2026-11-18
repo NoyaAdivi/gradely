@@ -53,7 +53,7 @@
         <li><b>Goal calculator:</b> the average you need in the credits you have left</li>
         <li><b>Chart</b> of your average by semester</li>
         <li><b>Any grade scale:</b> 100, 4.0, 5.0, 10 or 20</li>
-        <li><b>Confetti</b> when you already reached your goal 🎉</li>
+        <li><b>Confetti</b> when you've already reached your goal 🎉</li>
       </ul>
     </td>
     <td valign="top" width="33%">
@@ -71,7 +71,7 @@
 
 <a name="app"></a>
 <h3 align="center">📲 App and FAQ <sub><sup>new</sup></sub></h3>
-<p align="center">Gradely installs as a real app with its own icon, and the site answers common questions by topic.</p>
+<p align="center">Gradely can be installed as a real app with its own icon, and the site answers common questions by topic.</p>
 
 <table>
   <tr valign="top">

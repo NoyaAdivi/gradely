@@ -30,7 +30,7 @@
     <td align="center" width="20%"><a href="#how-it-works"><b>⚖️ משוקלל</b></a><br><sub>לפי נ"ז, כמו שצריך</sub></td>
     <td align="center" width="20%"><a href="https://noyaadivi.github.io/gradely/"><b>🎯 יעדים</b></a><br><sub>מה צריך כדי להגיע</sub></td>
     <td align="center" width="20%"><a href="#boost-planner"><b>🚀 שיפור</b></a><br><sub>תוכניות חכמות להעלאת הממוצע</sub></td>
-    <td align="center" width="20%"><a href="README.md"><b>🌍 HE · EN</b></a><br><sub>דו לשוני מלא, תומך RTL</sub></td>
+    <td align="center" width="20%"><a href="README.md"><b>🌍 HE · EN</b></a><br><sub>דו־לשוני מלא, תומך RTL</sub></td>
     <td align="center" width="20%"><a href="#tech-stack"><b>📦 0 ספריות</b></a><br><sub>HTML, CSS, JS בלבד</sub></td>
   </tr>
 </table>

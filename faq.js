@@ -35,7 +35,7 @@ window.NOYA_FAQ = {
    ],
    "en": [
     "How do I start?",
-    "Add a semester, then courses with a name, credits and a grade. Your weighted average updates instantly. Want to see it full first? Tap \"Load example\"."
+    "Add a semester, then courses with a name, credits and a grade. Your weighted average updates instantly. Want to see it full first? Tap \"Load sample\"."
    ]
   },
   {
@@ -64,11 +64,11 @@ window.NOYA_FAQ = {
    "t": "calc",
    "he": [
     "איך מחושב הממוצע המשוקלל?",
-    "כל ציון מוכפל בנקודות הזכות של הקורס, הסכום מתחלק בסך נקודות הזכות. כך קורס של 5 נ״ז משפיע פי 5 מקורס של נקודה אחת."
+    "כל ציון מוכפל בנקודות הזכות של הקורס, והסכום מתחלק בסך נקודות הזכות. כך קורס של 5 נ״ז משפיע פי 5 מקורס של נקודה אחת."
    ],
    "en": [
     "How is the weighted average calculated?",
-    "Each grade is multiplied by the course credits, and the total is divided by all credits. So a 5 credit course counts five times more than a 1 credit one."
+    "Each grade is multiplied by the course credits, and the total is divided by all credits. So a 5-credit course counts five times more than a 1-credit one."
    ]
   },
   {
@@ -145,7 +145,7 @@ window.NOYA_FAQ = {
    ],
    "en": [
     "Does it cost anything?",
-    "No. It is free, with no ads and no sign up, and the code is open on GitHub."
+    "No. It is free, with no ads and no sign-up, and the code is open on GitHub."
    ]
   }
  ]

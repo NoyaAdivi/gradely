@@ -49,7 +49,7 @@ const T = {
     cr: "Credits", grade: "Grade", inAvg: "Count", addCourse: "Add course", coursePh: "e.g. Data Structures",
     delSem: "Delete semester", targetT: "🎯 What do I need for my goal?", targetAvg: "Target average", left: "Credits left",
     tEmpty: "Fill both fields to see", tNeed: (n) => `You need a ${n} average in the remaining credits ✨`,
-    tOver: (n) => `You'd need ${n}, above the max grade 😕`, tDone: "You already reached it! 🎉",
+    tOver: (n) => `You'd need ${n}, above the max grade 😕`, tDone: "You've already reached it! 🎉",
     chartT: "📊 Average by semester", chartEmpty: "Add grades to see the chart",
     settings: "⚙️ Settings", scale: "Grade scale", reset: "Reset everything", resetQ: "Delete all data?",
     saved: "Everything is saved in your browser, no sign-up", portfolio: "Portfolio",
