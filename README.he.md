@@ -31,7 +31,7 @@
     <td align="center" width="20%"><a href="https://noyaadivi.github.io/gradely/"><b>🎯 יעדים</b></a><br><sub>מה צריך כדי להגיע</sub></td>
     <td align="center" width="20%"><a href="#boost-planner"><b>🚀 שיפור</b></a><br><sub>תוכניות חכמות להעלאת הממוצע</sub></td>
     <td align="center" width="20%"><a href="README.md"><b>🌍 HE · EN</b></a><br><sub>דו־לשוני מלא, תומך RTL</sub></td>
-    <td align="center" width="20%"><a href="#tech-stack"><b>📦 0 ספריות</b></a><br><sub>HTML, CSS, JS בלבד</sub></td>
+    <td align="center" width="20%"><a href="#grade-sheet"><b>📸 גיליון ציונים</b></a><br><sub>העלאה, צילום או הקלדה</sub></td>
   </tr>
 </table>
 
@@ -66,6 +66,7 @@
         <li><b>ייצוא וייבוא</b> של הציונים כקובץ JSON</li>
         <li><b>🔗 קישור לשיתוף</b> שפותח את הציונים בכל מכשיר, ו<b>🖨 הדפסה או שמירה כ-PDF</b></li>
         <li><b>📋 הדבקת רשימת קורסים</b> ישר מאקסל או מהפורטל של המוסד</li>
+        <li><b><a href="#grade-sheet">📸 גיליון ציונים</a></b> ממסמך, מצילום או בהקלדה</li>
         <li><b>מותאם לנייד</b>, מונפש, ומכבד הגדרת תנועה מופחתת</li>
         <li><b>נתוני דוגמה</b> בלחיצה, ו<b>ביטול</b> אחרי מחיקה (גם Ctrl+Z)</li>
       </ul>
@@ -94,6 +95,25 @@
   </tr>
 </table>
 
+
+<a name="grade-sheet"></a>
+<h3 align="center">📸 מילוי ציונים מגיליון הציונים <sub><sup>חדש</sup></sub></h3>
+<p align="center">לא צריך להקליד כל קורס. בוחרים אחת משלוש דרכים ו־Gradely ממלא את השמות, הנקודות והציונים לבד.</p>
+<table>
+  <tr valign="top">
+    <td width="33%" align="center"><b>📄 העלאת מסמך</b><br><sub>PDF, Word, Excel, CSV או תמונה. PDF סרוק נקרא עמוד אחרי עמוד</sub></td>
+    <td width="33%" align="center"><b>📷 צילום הגיליון</b><br><sub>נפתחת המצלמה האחורית של הטלפון, זיהוי טקסט בעברית ובאנגלית</sub></td>
+    <td width="33%" align="center"><b>✍️ הקלדה ידנית</b><br><sub>או הדבקת טקסט ישר מהפורטל של המוסד</sub></td>
+  </tr>
+</table>
+<ul>
+  <li><b>✅ בודקים לפני ששומרים:</b> חלון בדיקה שבו מתקנים כל שדה, מדלגים על קורסים ובוחרים לאן הם נכנסים</li>
+  <li><b>🗂️ שומר על הסמסטרים:</b> כותרות כמו "סמסטר א' תשפ"ה" בקובץ הופכות לסמסטרים נפרדים</li>
+  <li><b>🧠 קריאה חכמה:</b> מדלג על קודי קורס, תאריכים ושורות ממוצע. קורס עובר או פטור נספר בנקודות אבל לא בממוצע</li>
+  <li><b>⚖️ הסולם הנכון:</b> גיליון בסולם 0 עד 100 מחליף את סולם הציונים לבד</li>
+  <li><b>🔒 פרטי:</b> הכל קורה בדפדפן והקובץ לא נשלח לשום מקום. עובד גם בגרירה או ב־Ctrl+V</li>
+</ul>
+<p align="center"><sub>הקוד: <a href="scan.js">scan.js</a>. כלי הקריאה (<a href="https://github.com/naptha/tesseract.js">Tesseract.js</a>, <a href="https://github.com/mozilla/pdf.js">PDF.js</a>, <a href="https://github.com/mwilliamson/mammoth.js">Mammoth</a>, <a href="https://github.com/SheetJS/sheetjs">SheetJS</a>) נטענים רק כשבוחרים קובץ.</sub></p>
 
 <a name="boost-planner"></a>
 <h3 align="center">🚀 מתכנן שיפור ממוצע <sub><sup>חדש</sup></sub></h3>
@@ -181,6 +201,9 @@ flowchart LR
 ├── index.html        מבנה הדף והתבניות
 ├── style.css         עיצוב פסטלי ואנימציות
 ├── app.js            חישובים, החלפת שפה ושמירה
+├── scan.js           קריאת גיליון ציונים (צילום, PDF, Word, Excel, טקסט)
+├── faq.js            שאלות ותשובות לפי נושא
+├── sw.js             עבודה בלי אינטרנט והתקנה כאפליקציה
 ├── logo.svg          הלוגו של Gradely
 └── docs/
     ├── readme/       באנרים מונפשים ל-README

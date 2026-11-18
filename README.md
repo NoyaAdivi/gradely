@@ -29,7 +29,7 @@
     <td align="center" width="20%"><a href="https://noyaadivi.github.io/gradely/"><b>🎯 Goals</b></a><br><sub>what you need to get there</sub></td>
     <td align="center" width="20%"><a href="#boost-planner"><b>🚀 Boost</b></a><br><sub>smart plans to raise your GPA</sub></td>
     <td align="center" width="20%"><a href="README.he.md"><b>🌍 HE · EN</b></a><br><sub>fully bilingual, RTL ready</sub></td>
-    <td align="center" width="20%"><a href="#tech-stack"><b>📦 0 deps</b></a><br><sub>plain HTML, CSS, JS</sub></td>
+    <td align="center" width="20%"><a href="#grade-sheet"><b>📸 Grade sheet</b></a><br><sub>upload, photo or type</sub></td>
   </tr>
 </table>
 
@@ -64,6 +64,7 @@
         <li><b>Export and import</b> your grades as a JSON file</li>
         <li><b>🔗 Share link</b> that opens your grades on any device, and <b>🖨 print or save as PDF</b></li>
         <li><b>📋 Paste a list</b> of courses straight from Excel or your school portal</li>
+        <li><b><a href="#grade-sheet">📸 Grade sheet</a></b> from a document, a photo or by hand</li>
         <li><b>Sample data</b> in one click, and <b>undo</b> after deleting (also Ctrl+Z)</li>
         <li><b>Responsive</b>, animated, and respects reduced motion</li>
       </ul>
@@ -92,6 +93,25 @@
   </tr>
 </table>
 
+
+<a name="grade-sheet"></a>
+<h3 align="center">📸 Fill grades from your grade sheet <sub><sup>new</sup></sub></h3>
+<p align="center">No more typing every course. Pick one of three ways and Gradely fills in the names, credits and grades for you.</p>
+<table>
+  <tr valign="top">
+    <td width="33%" align="center"><b>📄 Upload a document</b><br><sub>PDF, Word, Excel, CSV or an image. Scanned PDFs are read page by page</sub></td>
+    <td width="33%" align="center"><b>📷 Take a photo</b><br><sub>opens the phone's back camera, Hebrew and English text recognition</sub></td>
+    <td width="33%" align="center"><b>✍️ Type by hand</b><br><sub>or paste text straight from your school portal</sub></td>
+  </tr>
+</table>
+<ul>
+  <li><b>✅ Check before saving:</b> a review window where you fix any field, skip courses and choose where they go</li>
+  <li><b>🗂️ Keeps your semesters:</b> headings like "Semester A" in the file become separate semesters</li>
+  <li><b>🧠 Smart reading:</b> skips course codes, dates and average rows, pass or exempt courses count credits but not the average</li>
+  <li><b>⚖️ Right scale:</b> a 0 to 100 sheet switches the grade scale for you</li>
+  <li><b>🔒 Private:</b> everything runs in your browser, the file is never uploaded anywhere. Also works with drag and drop or Ctrl+V</li>
+</ul>
+<p align="center"><sub>Code: <a href="scan.js">scan.js</a>. The reading tools (<a href="https://github.com/naptha/tesseract.js">Tesseract.js</a>, <a href="https://github.com/mozilla/pdf.js">PDF.js</a>, <a href="https://github.com/mwilliamson/mammoth.js">Mammoth</a>, <a href="https://github.com/SheetJS/sheetjs">SheetJS</a>) load only when you choose a file.</sub></p>
 
 <a name="boost-planner"></a>
 <h3 align="center">🚀 GPA Boost Planner <sub><sup>new</sup></sub></h3>
@@ -179,6 +199,9 @@ flowchart LR
 ├── index.html        page layout and templates
 ├── style.css         pastel theme and animations
 ├── app.js            calculations, language switch, saving
+├── scan.js           reads a grade sheet (photo, PDF, Word, Excel, text)
+├── faq.js            questions and answers by topic
+├── sw.js             offline support and app install
 ├── logo.svg          the Gradely logo
 └── docs/
     ├── readme/       animated README banners
