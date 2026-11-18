@@ -39,10 +39,10 @@
       <div class="hero-badge" aria-hidden="true"><img src="logo.svg" alt=""><span class="orbit"><i></i><i></i><i></i></span></div>
       <h1><span class="grad" data-i18n="title"></span></h1>
       <p class="sub" data-i18n="subtitle"></p>
-      <div class="pills"><span data-i18n="pill1"></span><span data-i18n="pill2"></span><a href="#boost" data-i18n="pill3"></a><span data-i18n="pill4"></span></div>
+      <div class="pills"><a href="#dash" data-i18n="pill1"></a><a href="#target" data-i18n="pill2"></a><a href="#boost" data-i18n="pill3"></a><a href="#faq" data-i18n="pill4"></a></div>
     </header>
 
-    <section class="dash reveal">
+    <section class="dash reveal" id="dash">
       <div class="card ring-card">
         <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
           <defs>
@@ -76,12 +76,21 @@
     <section class="layout reveal">
       <div>
         <div class="demo card" id="demoBox"><span>👋</span><p data-i18n="demoQ"></p><button class="btn soft" id="demoBtn" data-i18n="demoBtn"></button></div>
+        <div class="scan card" id="scanBox">
+          <div class="scan-ic" aria-hidden="true"><span>📄</span><i class="scan-beam"></i></div>
+          <div class="scan-txt"><h3 data-i18n="scT"></h3><p data-i18n="scD"></p><small data-i18n="scDrop"></small></div>
+          <div class="scan-btns">
+            <button class="btn soft" id="scanBtn" type="button" data-i18n="scBtn"></button>
+            <button class="btn ghost" id="scanPaste" type="button" data-i18n="scPaste"></button>
+          </div>
+          <input type="file" id="scanFile" accept="image/*,.pdf,.docx,.xlsx,.xls,.csv,.txt" hidden>
+        </div>
         <div id="semesters"></div>
         <button class="btn primary" id="addSem"><span>＋</span> <b data-i18n="addSem"></b></button>
       </div>
 
       <aside>
-        <div class="card side">
+        <div class="card side" id="target">
           <h2 data-i18n="targetT"></h2>
           <div class="fields">
             <label><span data-i18n="targetAvg"></span><input type="number" id="tAvg" min="0" step="0.1" placeholder="90"></label>
@@ -111,7 +120,11 @@
             <button class="btn ghost" id="exportBtn" data-i18n-title="exportT">⬇ <b data-i18n="export"></b></button>
             <button class="btn ghost" id="importBtn" data-i18n-title="importT">⬆ <b data-i18n="import"></b></button>
           </div>
-          <input type="file" id="importFile" accept="application/json" hidden>
+          <div class="row2">
+            <button class="btn ghost" id="shareBtn" data-i18n-title="shareT">🔗 <b data-i18n="share"></b></button>
+            <button class="btn ghost" id="printBtn" data-i18n-title="printT">🖨 <b data-i18n="print"></b></button>
+          </div>
+          <input type="file" id="importFile" accept="application/json,.json" hidden>
           <button class="btn ghost" id="demoBtn2" data-i18n="demoBtn"></button>
           <button class="btn ghost danger" id="resetBtn" data-i18n="reset"></button>
         </div>
@@ -163,6 +176,20 @@
   </main>
 
   <div class="toast" id="toast"></div>
+  <div class="scan-modal" id="scanModal" hidden><div class="scan-sheet card" role="dialog" aria-modal="true" id="scanSheet"></div></div>
+
+  <dialog class="card paste-dlg" id="pasteDlg">
+    <form method="dialog">
+      <h2 data-i18n="pasteH"></h2>
+      <p class="hint" data-i18n="pasteHint"></p>
+      <textarea id="pasteTxt" rows="7" dir="auto"></textarea>
+      <p class="hint" id="pastePrev"></p>
+      <div class="row2">
+        <button class="btn ghost" value="cancel" data-i18n="cancel"></button>
+        <button class="btn primary" value="ok" id="pasteOk"><b data-i18n="pasteAdd"></b></button>
+      </div>
+    </form>
+  </dialog>
 
   <template id="semTpl">
     <section class="card sem">
@@ -170,6 +197,7 @@
         <button class="fold" aria-label="toggle">▾</button>
         <input type="text" class="sem-name">
         <span class="sem-avg"></span>
+        <button class="icon paste" data-i18n-title="pasteT">📋</button>
         <button class="icon del-sem" data-i18n-title="delSem">🗑</button>
       </div>
       <div class="sem-body">
@@ -191,6 +219,7 @@
   </template>
 
   <script src="app.js"></script>
+  <script src="scan.js"></script>
   <script src="noya-kit.js" defer></script>
   <script src="faq.js" defer></script>
   <script src="noya-app.js" data-sw="sw.js" data-repo="https://github.com/NoyaAdivi/gradely" defer></script>

@@ -108,11 +108,22 @@ window.NOYA_FAQ = {
    "t": "privacy",
    "he": [
     "איך מעבירים את הנתונים למחשב אחר?",
-    "בהגדרות לוחצים \"ייצוא\" ומקבלים קובץ גיבוי. במחשב השני לוחצים \"ייבוא\" ובוחרים אותו."
+    "בהגדרות לוחצים \"ייצוא\" ומקבלים קובץ גיבוי. במחשב השני לוחצים \"ייבוא\" ובוחרים אותו. או פשוט לוחצים \"שיתוף\" ופותחים את הקישור במכשיר השני."
    ],
    "en": [
     "How do I move my data to another computer?",
-    "In settings tap \"Export\" to download a backup file. On the other computer tap \"Import\" and choose it."
+    "In settings tap \"Export\" to download a backup file. On the other computer tap \"Import\" and choose it. Or just tap \"Share\" and open the link on the other device."
+   ]
+  },
+  {
+   "t": "use",
+   "he": [
+    "אפשר להכניס הרבה קורסים בבת אחת?",
+    "כן. לוחצים על 📋 בכותרת של סמסטר ומדביקים שורה לכל קורס: שם, נ\"ז, ציון. עובד גם עם העתקה ישירה מאקסל או מהפורטל."
+   ],
+   "en": [
+    "Can I add many courses at once?",
+    "Yes. Tap 📋 in a semester's header and paste one course per line: name, credits, grade. Copying straight from Excel or your portal works too."
    ]
   },
   {

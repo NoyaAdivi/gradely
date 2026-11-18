@@ -1,6 +1,6 @@
 /* Service worker: makes the site an installable app that also opens offline. */
-const VERSION = 'gradely-v2';
-const SHELL = ["index.html", "style.css", "app.js", "noya-kit.js", "logo.svg", "noya-app.js", "faq.js", "manifest.webmanifest", "icons/icon-192.png"];
+const VERSION = 'gradely-v4';
+const SHELL = ["index.html", "style.css", "app.js", "scan.js", "noya-kit.js", "logo.svg", "noya-app.js", "faq.js", "manifest.webmanifest", "icons/icon-192.png"];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => Promise.all(SHELL.map((u) => c.add(u).catch(() => {})))).then(() => self.skipWaiting()));

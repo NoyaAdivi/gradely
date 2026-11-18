@@ -51,7 +51,7 @@
       <p><b>🎯 Plan ahead</b></p>
       <ul>
         <li><b>Goal calculator:</b> the average you need in the credits you have left</li>
-        <li><b>Chart</b> of your average by semester</li>
+        <li><b>Chart</b> of your average by semester, with a dashed line for your overall average</li>
         <li><b>Any grade scale:</b> 100, 4.0, 5.0, 10 or 20</li>
         <li><b>Confetti</b> when you've already reached your goal 🎉</li>
       </ul>
@@ -62,7 +62,9 @@
         <li><b>Hebrew and English</b> with one click, RTL and LTR</li>
         <li><b>Saved in your browser</b>, no sign-up, no server</li>
         <li><b>Export and import</b> your grades as a JSON file</li>
-        <li><b>Sample data</b> in one click, and <b>undo</b> after deleting</li>
+        <li><b>🔗 Share link</b> that opens your grades on any device, and <b>🖨 print or save as PDF</b></li>
+        <li><b>📋 Paste a list</b> of courses straight from Excel or your school portal</li>
+        <li><b>Sample data</b> in one click, and <b>undo</b> after deleting (also Ctrl+Z)</li>
         <li><b>Responsive</b>, animated, and respects reduced motion</li>
       </ul>
     </td>
