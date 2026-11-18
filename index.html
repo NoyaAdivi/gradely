@@ -77,13 +77,18 @@
       <div>
         <div class="demo card" id="demoBox"><span>👋</span><p data-i18n="demoQ"></p><button class="btn soft" id="demoBtn" data-i18n="demoBtn"></button></div>
         <div class="scan card" id="scanBox">
-          <div class="scan-ic" aria-hidden="true"><span>📄</span><i class="scan-beam"></i></div>
-          <div class="scan-txt"><h3 data-i18n="scT"></h3><p data-i18n="scD"></p><small data-i18n="scDrop"></small></div>
-          <div class="scan-btns">
-            <button class="btn soft" id="scanBtn" type="button" data-i18n="scBtn"></button>
-            <button class="btn ghost" id="scanPaste" type="button" data-i18n="scPaste"></button>
+          <div class="scan-top">
+            <div class="scan-ic" aria-hidden="true"><span>📄</span><i class="scan-beam"></i></div>
+            <div class="scan-txt"><span class="scan-new" data-i18n="scNew"></span><h3 data-i18n="scT"></h3><p data-i18n="scD"></p></div>
           </div>
+          <div class="scan-btns">
+            <button class="scan-opt o1" id="scanBtn" type="button"><span class="e">📄</span><b data-i18n="scBtn"></b><small data-i18n="scBtnS"></small></button>
+            <button class="scan-opt o2" id="scanCam" type="button"><span class="e">📷</span><b data-i18n="scCam"></b><small data-i18n="scCamS"></small></button>
+            <button class="scan-opt o3" id="scanPaste" type="button"><span class="e">✍️</span><b data-i18n="scPaste"></b><small data-i18n="scPasteS"></small></button>
+          </div>
+          <p class="scan-drop" data-i18n="scDrop"></p>
           <input type="file" id="scanFile" accept="image/*,.pdf,.docx,.xlsx,.xls,.csv,.txt" hidden>
+          <input type="file" id="scanCamFile" accept="image/*" capture="environment" hidden>
         </div>
         <div id="semesters"></div>
         <button class="btn primary" id="addSem"><span>＋</span> <b data-i18n="addSem"></b></button>

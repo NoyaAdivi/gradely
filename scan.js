@@ -308,6 +308,8 @@
   $("scanBtn").onclick = () => $("scanFile").click();
   $("scanPaste").onclick = () => pasteView();
   $("scanFile").onchange = (e) => { handle(e.target.files[0]); e.target.value = ""; };
+  $("scanCam").onclick = () => $("scanCamFile").click();
+  $("scanCamFile").onchange = (e) => { handle(e.target.files[0]); e.target.value = ""; };
   const box = $("scanBox");
   ["dragenter", "dragover"].forEach((ev) => box.addEventListener(ev, (e) => { e.preventDefault(); box.classList.add("drag"); }));
   ["dragleave", "drop"].forEach((ev) => box.addEventListener(ev, (e) => { e.preventDefault(); box.classList.remove("drag"); }));
