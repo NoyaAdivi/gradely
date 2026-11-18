@@ -122,7 +122,7 @@
 <p align="center"><a href="#how-it-works"><img src="docs/readme/screens-he.svg" width="100%" alt="ככה זה נראה"></a></p>
 
 <p align="center">
-  <a href="https://noyaadivi.github.io/gradely/"><img src="docs/images/screen-he.png" width="100%" alt="Gradely בעברית: טבעת ממוצע, סמסטרים, מחשבון יעד וגרף"></a>
+  <a href="https://noyaadivi.github.io/gradely/"><img src="docs/images/screenshot-he.png" width="100%" alt="Gradely בעברית: טבעת ממוצע, סמסטרים, מחשבון יעד וגרף"></a>
 </p>
 
 <a name="how-it-works"></a>

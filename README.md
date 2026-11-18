@@ -120,7 +120,7 @@
 <p align="center"><a href="#how-it-works"><img src="docs/readme/screens-en.svg" width="100%" alt="See it in action"></a></p>
 
 <p align="center">
-  <a href="https://noyaadivi.github.io/gradely/"><img src="docs/images/screen-en.png" width="100%" alt="Gradely in English: weighted average ring, semesters, goal calculator and chart"></a>
+  <a href="https://noyaadivi.github.io/gradely/"><img src="docs/images/screenshot-en.png" width="100%" alt="Gradely in English: weighted average ring, semesters, goal calculator and chart"></a>
 </p>
 
 <a name="how-it-works"></a>
