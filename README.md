@@ -105,7 +105,7 @@
   </tr>
 </table>
 <ul>
-  <li><b>✅ Check before saving:</b> a review window where you fix any field, skip courses and choose where they go</li>
+  <li><b>✅ Check before saving:</b> a review window where you fix any field, skip courses and choose where they go, and an <b>Undo</b> button right after adding</li>
   <li><b>🗂️ Keeps your semesters:</b> headings like "Semester A" in the file become separate semesters</li>
   <li><b>🧠 Smart reading:</b> skips course codes, dates and average rows, pass or exempt courses count credits but not the average</li>
   <li><b>⚖️ Right scale:</b> a 0 to 100 sheet switches the grade scale for you</li>

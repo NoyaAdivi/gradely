@@ -1,5 +1,5 @@
 /* Service worker: makes the site an installable app that also opens offline. */
-const VERSION = 'gradely-v4';
+const VERSION = 'gradely-v5';
 const SHELL = ["index.html", "style.css", "app.js", "scan.js", "noya-kit.js", "logo.svg", "noya-app.js", "faq.js", "manifest.webmanifest", "icons/icon-192.png"];
 
 self.addEventListener('install', (e) => {
@@ -20,9 +20,7 @@ self.addEventListener('fetch', (e) => {
       .catch(() => caches.match(req).then((r) => r || caches.match(SHELL[0]))));
     return;
   }
-  // files: cached copy right away, refreshed in the background
-  e.respondWith(caches.match(req).then((hit) => {
-    const net = fetch(req).then((res) => { if (res.ok) { const copy = res.clone(); caches.open(VERSION).then((c) => c.put(req, copy)); } return res; }).catch(() => hit);
-    return hit || net;
-  }));
+  // files: always the newest from the network, the cached copy only when offline
+  e.respondWith(fetch(req).then((res) => { if (res.ok) { const copy = res.clone(); caches.open(VERSION).then((c) => c.put(req, copy)); } return res; })
+    .catch(() => caches.match(req)));
 });

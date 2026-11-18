@@ -76,17 +76,31 @@
     <section class="layout reveal">
       <div>
         <div class="demo card" id="demoBox"><span>👋</span><p data-i18n="demoQ"></p><button class="btn soft" id="demoBtn" data-i18n="demoBtn"></button></div>
-        <div class="scan card" id="scanBox">
+        <div class="scan" id="scanBox">
+          <span class="scan-spark k1" aria-hidden="true">✦</span><span class="scan-spark k2" aria-hidden="true">✦</span><span class="scan-spark k3" aria-hidden="true">✦</span>
           <div class="scan-top">
-            <div class="scan-ic" aria-hidden="true"><span>📄</span><i class="scan-beam"></i></div>
-            <div class="scan-txt"><span class="scan-new" data-i18n="scNew"></span><h3 data-i18n="scT"></h3><p data-i18n="scD"></p></div>
+            <div class="scan-logo" aria-hidden="true"><img src="logo.svg" alt=""></div>
+            <div>
+              <span class="scan-new" data-i18n="scNew">✨ חדש</span>
+              <h3 data-i18n="scT">יש לך גיליון ציונים? הציונים ימולאו לבד</h3>
+              <p data-i18n="scD">בוחרים איך להכניס את הציונים: מעלים קובץ, מצלמים את הגיליון או מקלידים. לפני השמירה תוכלו לבדוק ולתקן הכל</p>
+            </div>
           </div>
           <div class="scan-btns">
-            <button class="scan-opt o1" id="scanBtn" type="button"><span class="e">📄</span><b data-i18n="scBtn"></b><small data-i18n="scBtnS"></small></button>
-            <button class="scan-opt o2" id="scanCam" type="button"><span class="e">📷</span><b data-i18n="scCam"></b><small data-i18n="scCamS"></small></button>
-            <button class="scan-opt o3" id="scanPaste" type="button"><span class="e">✍️</span><b data-i18n="scPaste"></b><small data-i18n="scPasteS"></small></button>
+            <button class="scan-opt o1" id="scanBtn" type="button">
+              <span class="ill ill-doc" aria-hidden="true"><svg viewBox="0 0 74 74"><rect x="16" y="8" width="38" height="50" rx="7" fill="#fff" stroke="#E8846F" stroke-width="2.5"/><path d="M24 20h22M24 28h22M24 36h14" stroke="#F6B9A8" stroke-width="3" stroke-linecap="round"/><rect class="beam" x="19" y="14" width="32" height="3" rx="1.5" fill="#B3A9FA"/><circle cx="52" cy="54" r="12" fill="#E8846F"/><path class="up" d="M52 60v-11M47 53l5-5 5 5" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <b data-i18n="scBtn">העלאת מסמך</b><small data-i18n="scBtnS">PDF, Word, Excel או תמונה</small><span class="go" data-i18n="scGo1">בחירת קובץ</span>
+            </button>
+            <button class="scan-opt o2" id="scanCam" type="button">
+              <span class="ill ill-cam" aria-hidden="true"><svg viewBox="0 0 74 74"><rect x="10" y="22" width="54" height="38" rx="10" fill="#fff" stroke="#7B6DF2" stroke-width="2.5"/><path d="M26 22l4-7h14l4 7" fill="#E8E4FF" stroke="#7B6DF2" stroke-width="2.5" stroke-linejoin="round"/><circle cx="37" cy="42" r="11" fill="#E8E4FF" stroke="#7B6DF2" stroke-width="2.5"/><g class="lens"><circle cx="37" cy="42" r="6" fill="#7B6DF2"/><circle cx="34.5" cy="39.5" r="2" fill="#fff"/></g><g class="flash"><path d="M56 12v16M48 20h16M50.5 14.5l11 11M61.5 14.5l-11 11" stroke="#F2C14E" stroke-width="2.4" stroke-linecap="round"/></g></svg></span>
+              <b data-i18n="scCam">צילום הגיליון</b><small data-i18n="scCamS">מצלמים במצלמה של הטלפון</small><span class="go" data-i18n="scGo2">פתיחת מצלמה</span>
+            </button>
+            <button class="scan-opt o3" id="scanPaste" type="button">
+              <span class="ill ill-pen" aria-hidden="true"><svg viewBox="0 0 74 74"><rect x="10" y="12" width="46" height="50" rx="8" fill="#fff" stroke="#3FA57B" stroke-width="2.5"/><path class="ln l1" d="M18 30h30" stroke="#8FD6B6" stroke-width="3" stroke-linecap="round"/><path class="ln l2" d="M18 42h30" stroke="#8FD6B6" stroke-width="3" stroke-linecap="round"/><g class="pen"><path d="M50 46l14-14 5 5-14 14-7 2z" fill="#3FA57B"/><path d="M48 53l2-7 5 5z" fill="#F6B9A8"/></g></svg></span>
+              <b data-i18n="scPaste">הקלדה ידנית</b><small data-i18n="scPasteS">או הדבקת טקסט מהפורטל</small><span class="go" data-i18n="scGo3">התחלה</span>
+            </button>
           </div>
-          <p class="scan-drop" data-i18n="scDrop"></p>
+          <p class="scan-drop" data-i18n="scDrop">💡 אפשר גם לגרור קובץ לכאן או להדביק צילום מסך עם Ctrl+V</p>
           <input type="file" id="scanFile" accept="image/*,.pdf,.docx,.xlsx,.xls,.csv,.txt" hidden>
           <input type="file" id="scanCamFile" accept="image/*" capture="environment" hidden>
         </div>
