@@ -82,6 +82,7 @@
       <ul>
         <li><b>📲 Installable app (PWA):</b> its own icon and window on phone and desktop, named just Gradely</li>
         <li><b>⚡ Works offline</b> after the first visit, powered by a service worker</li>
+        <li><a href="fx.js"><b>✨ Playful motion</b></a>: sections float in as you scroll, cards tilt and glow under the mouse, buttons ripple and the main ones burst with pastel sparkles (all off with reduced motion)</li>
       </ul>
     </td>
     <td width="50%">
@@ -198,6 +199,7 @@ flowchart LR
 ```
 ├── index.html        page layout and templates
 ├── style.css         pastel theme and animations
+├── fx.js             scroll reveals, card tilt, ripples and sparkles
 ├── app.js            calculations, language switch, saving
 ├── scan.js           reads a grade sheet (photo, PDF, Word, Excel, text)
 ├── faq.js            questions and answers by topic
